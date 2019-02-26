@@ -1,0 +1,664 @@
+@import "global.styl"
+
+slide()
+    width rem(23.44)
+    height:rem(17.58)
+    background url("../images/slide.png") center/cover no-repeat
+    animation: webSwipeTipAfter 1.5s infinite ease-in-out;
+scroll()
+  width rem(362)
+  height rem(200)
+  background url("../images/scroll.png") center/cover no-repeat
+  position absolute
+  top rem(369)
+  left:rem(8)
+
+body
+  overflow-x hidden
+.homeWrapper
+  width rem(375)
+  background  #232b7c
+  height rem(667)
+  .homePage
+    height: 92%
+    width: 100%
+    background url("../images/homepage/background.png") center/cover no-repeat
+    position absolute
+    bottom: 0
+    left rem(1)
+    .beginBtn
+      background url("../images/homepage/beginBtn.png") center/cover no-repeat
+      height:rem(51)
+      width: rem(200)
+      position: absolute
+      bottom: rem(46)
+      left: rem(92)
+    .text-1
+      width: rem(95)
+      height: rem(93)
+      top: rem(8)
+      left: rem(25)
+      position: absolute;
+      background url("../images/homepage/text-1.png") center/cover no-repeat
+      animation-name: wobble;
+      animation-iteration-count: 1;
+      animation-delay: 0s;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    .text-2
+      top: rem(56)
+      left: rem(116)
+      position: absolute;
+      width:rem(60)
+      height:rem(63)
+      background url("../images/homepage/text-2.png") center/cover no-repeat
+      animation-name: pulse;
+      animation-iteration-count: 1;
+      animation-delay: 0s;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    .text-3
+      width: rem(61)
+      height: rem(60)
+      background url("../images/homepage/text-3.png") center/cover no-repeat
+      top: rem(107)
+      left: rem(48)
+      position: absolute;
+      animation-name: slideDown;
+      animation-iteration-count: 1;
+      animation-delay: 0s;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    .text-4
+      width: rem(78)
+      height: rem(79)
+      background url("../images/homepage/text-4.png") center/cover no-repeat
+      top: rem(140)
+      left: rem(98)
+      position: absolute;
+      animation-name: stretchLeft;
+      animation-iteration-count: 1;
+      animation-delay: 0s;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    .symbol
+      width: rem(46)
+      height: rem(51)
+      background url("../images/homepage/symbol.png") center/cover no-repeat
+      top: rem(192)
+      left: rem(145)
+      position: absolute;
+      animation-name: slideLeft;
+      animation-iteration-count: 1;
+      animation-delay: 0s;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    .slide
+      slide()
+      position absolute
+      left:rem(178)
+      bottom:rem(13)
+.first
+  width rem(375)
+  height rem(667)
+  background url("../images/first/background.png") center/cover no-repeat
+  position relative
+  .sun
+    width rem(55)
+    height rem(55)
+    background url("../images/first/sun.png") center/cover no-repeat
+    position absolute
+    top rem(47)
+    right:rem(45)
+    animation-name: sun;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .bubble
+    width rem(90)
+    height rem(84)
+    background url("../images/first/bubble.png") center/cover no-repeat
+    position absolute
+    top rem(171)
+    left:rem(143)
+    animation-name: bounceInRight;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .liubei
+    width rem(92)
+    height rem(167)
+    background url("../images/first/liubei.png") center/cover no-repeat
+    position absolute
+    top rem(218)
+    left:rem(235)
+    animation-name: bounceInRight;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .bird
+    width rem(56)
+    height rem(23)
+    background url("../images/first/bird.png") center/cover no-repeat
+    position absolute
+    top rem(190)
+    left:rem(246)
+    animation-name: slideLeft;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .scroll
+    scroll()
+    ul
+      font-size rem(12)
+      font-family 'HappyZcool'
+      li
+        list-style none
+
+  .nextBtn
+    width rem(131)
+    height rem(48)
+    background url("../images/nextBtn.png") center/cover no-repeat
+    position absolute
+    bottom  rem(36)
+    left:rem(122)
+  .slide
+    slide()
+    position absolute
+    bottom  rem(12)
+    left:rem(178)
+.second
+  width rem(375)
+  height rem(667)
+  background url("../images/second/background.png") center/cover no-repeat
+  position relative
+  .dialogue-1
+    width rem(103)
+    height rem(97)
+    background url("../images/second/dialogue-1.png") center/cover no-repeat
+    position absolute
+    top  rem(146)
+    left:rem(28)
+  .dialogue-2
+    width rem(90)
+    height rem(84)
+    background url("../images/second/dialogue-2.png") center/cover no-repeat
+    position absolute
+    top  rem(125)
+    left:rem(179)
+  .persons
+    width rem(245)
+    height rem(174)
+    background url("../images/second/person.png") center/cover no-repeat
+    position absolute
+    top  rem(210)
+    left:rem(83)
+  .scroll
+    scroll()
+
+
+
+
+
+//    第二页太阳
+@keyframes sun {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate(-3deg);
+    transform: scale3d(.9, .9, .9) rotate(-3deg)
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+}
+//    刘备 气泡
+@keyframes bounceInRight {
+  0% {
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+    opacity: 0
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1
+  }
+}
+//  下页
+@keyframes webSwipeTipAfter {
+    0% {
+        opacity: 1
+    }
+    to {
+        -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    opacity: 0
+}
+}
+//  感叹号 鸟
+@keyframes slideLeft {
+  0%,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0)
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0)
+  }
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0)
+  }
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0)
+  }
+  to {
+    -webkit-transform: none;
+    transform: none
+  }
+}
+// 槽
+@keyframes stretchLeft {
+  0%,
+  40%,
+  60%,
+  80% {
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out
+  }
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    opacity: 0
+  }
+  1% {
+    -webkit-transform: scaleX(.3);
+    transform: scaleX(.3);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    opacity: 0
+  }
+  40% {
+    -webkit-transform: scaleX(1.02);
+    transform: scaleX(1.02);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    opacity: 1
+  }
+  60% {
+    -webkit-transform: scaleX(.98);
+    transform: scaleX(.98);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0
+  }
+  80% {
+    -webkit-transform: scaleX(1.01);
+    transform: scaleX(1.01);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0
+  }
+  99% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0
+  }
+  to {
+    -webkit-transform: none;
+    transform: none
+  }
+}
+.flipInY {
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+  -webkit-backface-visibility: visible!important;
+  backface-visibility: visible!important
+}
+// 我
+@keyframes wobble {
+  0% {
+    -webkit-transform: none;
+    transform: none
+  }
+  15% {
+    -webkit-transform: translate3d(-25%, 0, 0) rotate(-5deg);
+    transform: translate3d(-25%, 0, 0) rotate(-5deg)
+  }
+  30% {
+    -webkit-transform: translate3d(20%, 0, 0) rotate(3deg);
+    transform: translate3d(20%, 0, 0) rotate(3deg)
+  }
+  45% {
+    -webkit-transform: translate3d(-15%, 0, 0) rotate(-3deg);
+    transform: translate3d(-15%, 0, 0) rotate(-3deg)
+  }
+  60% {
+    -webkit-transform: translate3d(10%, 0, 0) rotate(2deg);
+    transform: translate3d(10%, 0, 0) rotate(2deg)
+  }
+  75% {
+    -webkit-transform: translate3d(-5%, 0, 0) rotate(-1deg);
+    transform: translate3d(-5%, 0, 0) rotate(-1deg)
+  }
+  to {
+    -webkit-transform: none;
+    transform: none
+  }
+}
+// 跳
+ @keyframes slideDown {
+  0%,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+    transition-timing-function: cubic-bezier(.215, .61, .355, 1)
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0)
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0)
+  }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0)
+  }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0)
+  }
+  to {
+    -webkit-transform: none;
+    transform: none
+  }
+}
+//   要
+@keyframes pulse {
+  0% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05)
+  }
+  to {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1)
+  }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: translate(0) rotate(0deg);
+    transform: translate(0) rotate(0deg)
+  }
+  2% {
+    -webkit-transform: translate(-1px, 3px) rotate(-1.5deg);
+    transform: translate(-1px, 3px) rotate(-1.5deg)
+  }
+  4% {
+    -webkit-transform: translate(-4px, 5px) rotate(-1.5deg);
+    transform: translate(-4px, 5px) rotate(-1.5deg)
+  }
+  6% {
+    -webkit-transform: translate(-1px, 6px) rotate(-.5deg);
+    transform: translate(-1px, 6px) rotate(-.5deg)
+  }
+  8% {
+    -webkit-transform: translate(5px, -4px) rotate(-3.5deg);
+    transform: translate(5px, -4px) rotate(-3.5deg)
+  }
+  10% {
+    -webkit-transform: translate(-7px, -3px) rotate(-3.5deg);
+    transform: translate(-7px, -3px) rotate(-3.5deg)
+  }
+  12% {
+    -webkit-transform: translate(-1px, 8px) rotate(2.5deg);
+    transform: translate(-1px, 8px) rotate(2.5deg)
+  }
+  14% {
+    -webkit-transform: translate(3px, -5px) rotate(-1.5deg);
+    transform: translate(3px, -5px) rotate(-1.5deg)
+  }
+  16% {
+    -webkit-transform: translate(1px) rotate(2.5deg);
+    transform: translate(1px) rotate(2.5deg)
+  }
+  18% {
+    -webkit-transform: translate(-6px, -10px) rotate(-.5deg);
+    transform: translate(-6px, -10px) rotate(-.5deg)
+  }
+  20% {
+    -webkit-transform: translate(3px, -2px) rotate(1.5deg);
+    transform: translate(3px, -2px) rotate(1.5deg)
+  }
+  22% {
+    -webkit-transform: translate(0) rotate(-2.5deg);
+    transform: translate(0) rotate(-2.5deg)
+  }
+  24% {
+    -webkit-transform: translate(-5px, -4px) rotate(1.5deg);
+    transform: translate(-5px, -4px) rotate(1.5deg)
+  }
+  26% {
+    -webkit-transform: translate(-1px, 3px) rotate(-3.5deg);
+    transform: translate(-1px, 3px) rotate(-3.5deg)
+  }
+  28% {
+    -webkit-transform: translate(1px, 1px) rotate(-3.5deg);
+    transform: translate(1px, 1px) rotate(-3.5deg)
+  }
+  30% {
+    -webkit-transform: translate(-4px, 8px) rotate(1.5deg);
+    transform: translate(-4px, 8px) rotate(1.5deg)
+  }
+  32% {
+    -webkit-transform: translate(-9px, 7px) rotate(-3.5deg);
+    transform: translate(-9px, 7px) rotate(-3.5deg)
+  }
+  34% {
+    -webkit-transform: translate(4px, -9px) rotate(-2.5deg);
+    transform: translate(4px, -9px) rotate(-2.5deg)
+  }
+  36% {
+    -webkit-transform: translate(1px, -6px) rotate(-2.5deg);
+    transform: translate(1px, -6px) rotate(-2.5deg)
+  }
+  38% {
+    -webkit-transform: translate(-4px) rotate(-2.5deg);
+    transform: translate(-4px) rotate(-2.5deg)
+  }
+  40% {
+    -webkit-transform: translate(3px, -7px) rotate(.5deg);
+    transform: translate(3px, -7px) rotate(.5deg)
+  }
+  42% {
+    -webkit-transform: translate(4px, 4px) rotate(-.5deg);
+    transform: translate(4px, 4px) rotate(-.5deg)
+  }
+  44% {
+    -webkit-transform: translate(8px, -4px) rotate(-2.5deg);
+    transform: translate(8px, -4px) rotate(-2.5deg)
+  }
+  46% {
+    -webkit-transform: translate(9px, 9px) rotate(-3.5deg);
+    transform: translate(9px, 9px) rotate(-3.5deg)
+  }
+  48% {
+    -webkit-transform: translate(6px, -8px) rotate(-.5deg);
+    transform: translate(6px, -8px) rotate(-.5deg)
+  }
+  50% {
+    -webkit-transform: translate(-1px, 4px) rotate(-3.5deg);
+    transform: translate(-1px, 4px) rotate(-3.5deg)
+  }
+  52% {
+    -webkit-transform: translate(4px, 6px) rotate(-1.5deg);
+    transform: translate(4px, 6px) rotate(-1.5deg)
+  }
+  54% {
+    -webkit-transform: translate(9px, -3px) rotate(2.5deg);
+    transform: translate(9px, -3px) rotate(2.5deg)
+  }
+  56% {
+    -webkit-transform: translate(8px, -2px) rotate(-3.5deg);
+    transform: translate(8px, -2px) rotate(-3.5deg)
+  }
+  58% {
+    -webkit-transform: translate(-2px, -9px) rotate(-.5deg);
+    transform: translate(-2px, -9px) rotate(-.5deg)
+  }
+  60% {
+    -webkit-transform: translate(-1px, -5px) rotate(2.5deg);
+    transform: translate(-1px, -5px) rotate(2.5deg)
+  }
+  62% {
+    -webkit-transform: translate(-8px, 3px) rotate(2.5deg);
+    transform: translate(-8px, 3px) rotate(2.5deg)
+  }
+  64% {
+    -webkit-transform: translate(6px, -2px) rotate(-3.5deg);
+    transform: translate(6px, -2px) rotate(-3.5deg)
+  }
+  66% {
+    -webkit-transform: translate(-5px, 9px) rotate(-1.5deg);
+    transform: translate(-5px, 9px) rotate(-1.5deg)
+  }
+  68% {
+    -webkit-transform: translate(3px, 1px) rotate(-.5deg);
+    transform: translate(3px, 1px) rotate(-.5deg)
+  }
+  70% {
+    -webkit-transform: translate(6px, 4px) rotate(-1.5deg);
+    transform: translate(6px, 4px) rotate(-1.5deg)
+  }
+  72% {
+    -webkit-transform: translate(-6px, -5px) rotate(1.5deg);
+    transform: translate(-6px, -5px) rotate(1.5deg)
+  }
+  74% {
+    -webkit-transform: translate(-8px) rotate(-.5deg);
+    transform: translate(-8px) rotate(-.5deg)
+  }
+  76% {
+    -webkit-transform: translate(-5px, -8px) rotate(1.5deg);
+    transform: translate(-5px, -8px) rotate(1.5deg)
+  }
+  78% {
+    -webkit-transform: translate(5px, -3px) rotate(-1.5deg);
+    transform: translate(5px, -3px) rotate(-1.5deg)
+  }
+  80% {
+    -webkit-transform: translate(-6px, -3px) rotate(-1.5deg);
+    transform: translate(-6px, -3px) rotate(-1.5deg)
+  }
+  82% {
+    -webkit-transform: translate(7px, 8px) rotate(-1.5deg);
+    transform: translate(7px, 8px) rotate(-1.5deg)
+  }
+  84% {
+    -webkit-transform: translate(-6px, 9px) rotate(.5deg);
+    transform: translate(-6px, 9px) rotate(.5deg)
+  }
+  86% {
+    -webkit-transform: translate(1px, 8px) rotate(-3.5deg);
+    transform: translate(1px, 8px) rotate(-3.5deg)
+  }
+  88% {
+    -webkit-transform: translate(-9px, -2px) rotate(1.5deg);
+    transform: translate(-9px, -2px) rotate(1.5deg)
+  }
+  90% {
+    -webkit-transform: translate(4px, -6px) rotate(-1.5deg);
+    transform: translate(4px, -6px) rotate(-1.5deg)
+  }
+  92% {
+    -webkit-transform: translateY(-1px) rotate(.5deg);
+    transform: translateY(-1px) rotate(.5deg)
+  }
+  94% {
+    -webkit-transform: translate(2px, -9px) rotate(2.5deg);
+    transform: translate(2px, -9px) rotate(2.5deg)
+  }
+  96% {
+    -webkit-transform: translate(-9px, 1px) rotate(-2.5deg);
+    transform: translate(-9px, 1px) rotate(-2.5deg)
+  }
+  98% {
+    -webkit-transform: translate(-9px, -5px) rotate(-3.5deg);
+    transform: translate(-9px, -5px) rotate(-3.5deg)
+  }
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1
+  }
+}
