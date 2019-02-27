@@ -30,6 +30,30 @@ btn()
     height rem(48)
     background url("../images/nextBtn.png") center/cover no-repeat
 
+ul()
+  font-size rem(12)
+  font-family 'HappyZcool'
+  letter-spacing rem(4)
+  color: #6b2911
+  font-weight 500
+  margin rem(36) auto 0
+  width rem(280)
+  height rem(156)
+  li
+    list-style none
+    display flex
+    align-items center
+    margin-top rem(12)
+    position relative
+    input
+      width:rem(18)
+      height rem(18)
+      //display none
+      visibility hidden
+      margin: 0 rem(14) 0 0
+
+
+
 liubeiSlideIn()
      width rem(92)
      height rem(167)
@@ -201,10 +225,13 @@ body
   .scroll
     scroll()
     ul
-      font-size rem(12)
-      font-family 'HappyZcool'
-      li
-        list-style none
+      ul()
+      .firstCircle
+        width:rem(18)
+        height rem(18)
+        background url("../images/unselect.png") center/cover no-repeat
+        position absolute
+
 
   .nextBtn
     width rem(131)
@@ -263,6 +290,13 @@ body
     btn()
   .scroll
     scroll()
+    ul
+      ul()
+      .secondCircle
+        width:rem(18)
+        height rem(18)
+        background url("../images/unselect.png") center/cover no-repeat
+        position absolute
   .slide
     slide()
     position absolute
@@ -321,6 +355,13 @@ body
     animation-play-state: running;
   .scroll
     scroll()
+    ul
+      ul()
+      .thirdCircle
+        width:rem(18)
+        height rem(18)
+        background url("../images/unselect.png") center/cover no-repeat
+        position absolute
   .btn
     btn()
   .slide
@@ -364,6 +405,13 @@ body
     left:rem(8)
   .scroll
     scroll()
+    ul
+      ul()
+      .fourthCircle
+        width:rem(18)
+        height rem(18)
+        background url("../images/unselect.png") center/cover no-repeat
+        position absolute
   .btn
     btn()
   .slide
@@ -393,6 +441,13 @@ body
     animation-play-state: running;
   .scroll
     scroll()
+    ul
+      ul()
+      .fifthCircle
+        width:rem(18)
+        height rem(18)
+        background url("../images/unselect.png") center/cover no-repeat
+        position absolute
   .resultBtn
     width rem(131)
     height rem(48)
@@ -432,6 +487,12 @@ body
     position absolute
     top  rem(310)
     left: rem(82)
+  .echart
+    width rem(120)
+    height rem(116)
+    position absolute
+    top  rem(375)
+    left:rem(20)
   .positionBtn
     width:rem(251)
     height:rem(48)
@@ -512,6 +573,9 @@ body
     bottom  rem(66)
     left:rem(25)
 
+// 圆圈选中
+.selected
+  background url("../images/selected.png") center/cover no-repeat !important
 
 // flag
 @keyframes float {
