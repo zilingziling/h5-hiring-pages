@@ -3,42 +3,105 @@ html
         meta(charset='utf-8')
         meta(name="viewport" content="width=device-width, initial-scale=1")
         title hiring
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script>
     body
-        .homeWrapper
-            .homePage
-                .text-1
-                .text-2
-                .text-3
-                .text-4
-                .symbol
-                .beginBtn
-                .slide
-        .first
-            .sun
-            .bubble
-            .liubei
-            .bird
-            .scroll
-                ul
-                    li
-                      h3 1.你第一次前往南阳拜访时，恰逢诸葛亮出游，不知何时归来，你准备
-                    li
-                         input(name='first' type='radio')
-                         span A. 在南阳等候诸葛归来
-                    li
-                         input(name='first' type='radio')
-                         span B. 先行回去歇息，择日再来
-                    li
-                        input(name='first' type='radio')
-                        span B. 先行回去歇息，择日再来
-            .nextBtn
-            .slide
-        .second
-            .dialogue-1
-            .dialogue-2
-            .persons
-            .scroll
-            .btn
-                .last
-                .next
+        .swiper-container
+            .swiper-wrapper
+                .swiper-slide
+                    .homeWrapper(id="homepage")
+                        .homePage
+                            .text-1(class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s")
+                            .text-2
+                            .text-3
+                            .text-4
+                            .symbol
+                            .beginBtn
+                            .slide
+                .swiper-slide
+                    .first
+                        .sun
+                        .bubble
+                        .liubei
+                        .bird
+                        .scroll
+                            ul
+                                li
+                                  h3 1.你第一次前往南阳拜访时，恰逢诸葛亮出游，不知何时归来，你准备
+                                li
+                                     input(name='first' type='radio')
+                                     span A. 在南阳等候诸葛归来
+                                li
+                                     input(name='first' type='radio')
+                                     span B. 先行回去歇息，择日再来
+                                li
+                                    input(name='first' type='radio')
+                                    span B. 先行回去歇息，择日再来
+                        .nextBtn
+                        .slide
+                .swiper-slide
+                    .second
+                        .dialogue-1
+                        .dialogue-2
+                        .persons
+                        .scroll
+                        .btn
+                            .last
+                            .next
+                        .slide
+                .swiper-slide
+                    .third
+                        .house
+                        .zzz
+                        .cat
+                        .liubei
+                        .scroll
+                        .btn
+                            .last
+                            .next
+                        .slide
+                .swiper-slide
+                    .fourth
+                        .moon
+                        .window
+                        .person
+                        .scroll
+                        .btn
+                            .last
+                            .next
+                        .slide
+                .swiper-slide
+                    .fifth
+                        .flag
+                        .scroll
+                        .resultBtn
+                        .slide
+                .swiper-slide
+                    .resultPage
+                        .video
+                        .result
+                        .tag
+                        .positionBtn
+                        .slide
+                .swiper-slide
+                    .form
+                        p.firstP 1.您的姓名
+                           span *
+                        input
+                        p.secondP 2.您的电话
+                            span *
+                        input
+                        p.thirdP 3.您应聘的岗位【多选题】
+                            span *
+                        .gridWrapper
+                            <label><span className="tag"></span><input name="Fruit" type="checkbox" value="" />见习融资顾问 </label>
+                            <label><span className="tag"></span><input name="Fruit" type="checkbox" value="" />客户经理 </label>
+                            <label><span className="tag"></span><input name="Fruit" type="checkbox" value="" />储备团队经理 </label>
+                            <label><span className="tag"></span><input name="Fruit" type="checkbox" value="" />团队经理 </label>
+                            <label><span className="tag"></span><input name="Fruit" type="checkbox" value="" />金融实习生 </label>
+                            <label><span className="tag"></span><input name="Fruit" type="checkbox" value="" />人事/行政助理 </label>
+                        .submitBtn
+
+
 

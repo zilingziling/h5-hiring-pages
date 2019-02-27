@@ -12,16 +12,63 @@ scroll()
   position absolute
   top rem(369)
   left:rem(8)
+//  上一题下一题
+btn()
+  display flex
+  width rem(285)
+  height rem(41)
+  justify-content: space-between
+  position absolute
+  bottom  rem(43)
+  left:rem(47)
+  .last
+    width rem(131)
+    height rem(48)
+    background url("../images/lastBtn.png") center/cover no-repeat
+  .next
+    width rem(131)
+    height rem(48)
+    background url("../images/nextBtn.png") center/cover no-repeat
+
+liubeiSlideIn()
+     width rem(92)
+     height rem(167)
+     position absolute
+     top rem(218)
+     left:rem(235)
+
+//动画
+.liubeiAni
+  animation-name: bounceInRight;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-play-state: running;
+.text-1-ani
+  animation-name: wobble;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+  animation-play-state: running;
 
 body
-  overflow-x hidden
+  overflow hidden
+.swiper-container
+  width rem(375)
+  height rem(667)
 .homeWrapper
   width rem(375)
   background  #232b7c
   height rem(667)
+  position: relative
+  overflow hidden
   .homePage
-    height: 92%
-    width: 100%
+    height: rem(614)
+    width rem(375)
     background url("../images/homepage/background.png") center/cover no-repeat
     position absolute
     bottom: 0
@@ -40,13 +87,6 @@ body
       left: rem(25)
       position: absolute;
       background url("../images/homepage/text-1.png") center/cover no-repeat
-      animation-name: wobble;
-      animation-iteration-count: 1;
-      animation-delay: 0s;
-      animation-duration: 1s;
-      animation-timing-function: ease;
-      animation-fill-mode: both;
-      animation-play-state: running;
     .text-2
       top: rem(56)
       left: rem(116)
@@ -142,19 +182,8 @@ body
     animation-fill-mode: both;
     animation-play-state: running;
   .liubei
-    width rem(92)
-    height rem(167)
+    liubeiSlideIn()
     background url("../images/first/liubei.png") center/cover no-repeat
-    position absolute
-    top rem(218)
-    left:rem(235)
-    animation-name: bounceInRight;
-    animation-iteration-count: 1;
-    animation-delay: 0s;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-    animation-play-state: running;
   .bird
     width rem(56)
     height rem(23)
@@ -194,20 +223,35 @@ body
   height rem(667)
   background url("../images/second/background.png") center/cover no-repeat
   position relative
+  overflow hidden
   .dialogue-1
-    width rem(103)
-    height rem(97)
-    background url("../images/second/dialogue-1.png") center/cover no-repeat
-    position absolute
-    top  rem(146)
-    left:rem(28)
-  .dialogue-2
     width rem(90)
     height rem(84)
-    background url("../images/second/dialogue-2.png") center/cover no-repeat
+    background url("../images/second/dialogue-1.png") center/cover no-repeat
     position absolute
     top  rem(125)
     left:rem(179)
+    animation-name: fadeInLeft;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .dialogue-2
+    width rem(103)
+    height rem(97)
+    background url("../images/second/dialogue-2.png") center/cover no-repeat
+    position absolute
+    top  rem(146)
+    left:rem(28)
+    animation-name: fadeInLeft;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
   .persons
     width rem(245)
     height rem(174)
@@ -215,13 +259,326 @@ body
     position absolute
     top  rem(210)
     left:rem(83)
+  .btn
+    btn()
   .scroll
     scroll()
+  .slide
+    slide()
+    position absolute
+    bottom  rem(10)
+    left:rem(178)
+.third
+  width rem(375)
+  height rem(667)
+  background url("../images/third/background.png") center/cover no-repeat
+  position relative
+  overflow hidden
+  .house
+    width:rem(237)
+    height rem(242)
+    background url("../images/third/house.png") center/cover no-repeat
+    position absolute
+    top  rem(154)
+    left:0
+    animation-name: pulse;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .zzz
+    width:rem(65)
+    height rem(50)
+    background url("../images/third/zzz.png") center/cover no-repeat
+    position absolute
+    top  rem(175)
+    left:rem(158)
+    animation-name: bounceSmall;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .cat
+    width:rem(35)
+    height rem(25)
+    background url("../images/third/cat.png") center/cover no-repeat
+    position absolute
+    top  rem(343)
+    left:rem(147)
+  .liubei
+    liubeiSlideIn()
+    background url("../images/third/liubei.png") center/cover no-repeat
+    animation-name: bounceInRight;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .scroll
+    scroll()
+  .btn
+    btn()
+  .slide
+    slide()
+    position absolute
+    bottom  rem(10)
+    left:rem(178)
+.fourth
+  width rem(375)
+  height rem(667)
+  position relative
+  background url("../images/fourth/background.png") center/cover no-repeat
+  overflow hidden
+  .moon
+    width:rem(156)
+    height rem(166)
+    background url("../images/fourth/moon.png") center/cover no-repeat
+    position absolute
+    top  rem(18)
+    left:0
+    animation-name: fadeInUp;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 1.9s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .window
+    width:rem(375)
+    height rem(285)
+    background url("../images/fourth/window.png") center/cover no-repeat
+    position absolute
+    top  rem(25)
+    left:0
+  .person
+    width:rem(367)
+    height rem(247)
+    background url("../images/fourth/person.png") center/cover no-repeat
+    position absolute
+    top  rem(101)
+    left:rem(8)
+  .scroll
+    scroll()
+  .btn
+    btn()
+  .slide
+    slide()
+    position absolute
+    bottom  rem(10)
+    left:rem(178)
+.fifth
+  width rem(375)
+  height rem(667)
+  position relative
+  background url("../images/fifth/background.png") center/cover no-repeat
+  overflow hidden
+  .flag
+    width:rem(178)
+    height rem(190)
+    background url("../images/fifth/flag.png") center/cover no-repeat
+    position absolute
+    top  rem(137)
+    left:rem(198)
+    animation-name: float;
+    animation-iteration-count: 1;
+    animation-delay: 0s;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  .scroll
+    scroll()
+  .resultBtn
+    width rem(131)
+    height rem(48)
+    background url("../images/fifth/resultBtn.png") center/cover no-repeat
+    position absolute
+    bottom  rem(36)
+    left:rem(122)
+  .slide
+    slide()
+    position absolute
+    bottom  rem(10)
+    left:rem(178)
+.resultPage
+  width rem(375)
+  height rem(667)
+  position relative
+  background #111980
+  overflow hidden
+  .video
+    width rem(356)
+    height rem(335)
+    background url("../images/result/viedo.png") center/cover no-repeat
+    position absolute
+    top  rem(15)
+    left:0
+  .result
+    width rem(360)
+    height rem(270)
+    background url("../images/result/border.png") center/cover no-repeat
+    position absolute
+    top  rem(295)
+    left:rem(15)
+  .tag
+    width rem(210)
+    height rem(79)
+    background url("../images/result/tag.png") center/cover no-repeat
+    position absolute
+    top  rem(310)
+    left: rem(82)
+  .positionBtn
+    width:rem(251)
+    height:rem(48)
+    background url("../images/result/positionBtn.png") center/cover no-repeat
+    position absolute
+    bottom  rem(36)
+    left:rem(62)
+  .slide
+    slide()
+    position absolute
+    bottom  rem(8)
+    left:rem(178)
+.form
+  width rem(375)
+  height rem(667)
+  font-size 12px
+  position: relative
+  overflow hidden
+  .firstP
+    margin: rem(34) 0 rem(16)
+  .secondP
+    margin: rem(23) 0 rem(16)
+  .thirdP
+    margin: rem(23) 0 rem(16)
+  p
+    width rem(373)
+    height rem(33)
+    background: #0c3094
+    font-size:rem(18)
+    color white
+    line-height:rem(33)
+    letter-spacing: rem(4)
+    text-indent rem(16)
+    vertical-align middle
+    margin: rem(34) 0 rem(16)
+    font-weight 500
+    span
+      color #df0604
+  input
+    width rem(325)
+    height rem(38)
+    border 1px solid #8598c9
+    border-radius 4px
+    margin-left rem(26rem)
+  .gridWrapper
+    width 96%
+    margin:auto
+    display: grid
+    grid-template-columns:48% 48%
+    grid-column-gap   4%
+    grid-row-gap rem(26)
+    justify-items: start;
+    grid-template-rows: rem(20) rem(20) rem(20)
+    margin-top rem(27)
+    label
+      color #0b3190
+      font-size rem(17)
+      font-weight 500
+      position: relative
+      input
+        width:rem(15)
+        height:rem(15)
+        margin-right  rem(12)
+        position: relative
+        visibility hidden
+      span
+        width:rem(15)
+        height:rem(15)
+        background url("../images/notCheck.png") center/cover no-repeat
+        position absolute
+        left: rem(26)
+        top rem(3)
+  .submitBtn
+    width:rem(332)
+    height:rem(42)
+    background url("../images/submitBtn.png") center/cover no-repeat
+    position absolute
+    bottom  rem(66)
+    left:rem(25)
 
 
+// flag
+@keyframes float {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+  }
+  25% {
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0)
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10%, 0);
+    transform: translate3d(0, 10%, 0)
+  }
+  to {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+  }
+}
+// 月亮
+@keyframes fadeInUp {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    opacity: 0
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1
+  }
+}
 
-
-
+//     zzz
+@keyframes bounceSmall {
+  0% {
+    -webkit-transform: scale(1.7);
+    opacity: 0
+  }
+  50% {
+    -webkit-transform: scale(.95);
+    opacity: 1
+  }
+  80% {
+    -webkit-transform: scale(1.05)
+  }
+  90% {
+    -webkit-transform: scale(.98)
+  }
+  to {
+    -webkit-transform: scale(1)
+  }
+}
+// 第二题两个对话飘进来
+@keyframes fadeInLeft {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    opacity: 0
+  }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1
+  }
+}
 //    第二页太阳
 @keyframes sun {
   0% {
