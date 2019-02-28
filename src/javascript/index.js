@@ -1,70 +1,150 @@
-import "../css/index.styl"
-import Swiper from 'swiper'
-import "../javascript/swiper.animate1.0.3.min.js"
-$(function () {
-    let mySwiper=new Swiper('.swiper-container',{
-        direction:'vertical',
-        pagination:{
-            el:'.swiper-pagination',
-            bulletElement : 'span',
-            clickable:false,
-            // bulletClass:'my-bullet',
-            // bulletActiveClass:'my-bullet-active'
-        },
-        // on:{
-        //     init: function(){
-        //         swiperAnimateCache($(".text-1")); //隐藏动画元素
-        //         swiperAnimate($(".text-1")); //初始化完成开始动画
-        //     },
-        //     slideChangeTransitionEnd: function(){
-        //         swiperAnimate($(".text-1")); //每个slide切换结束时也运行当前slide动画
-        //         //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
-        //     }
-        // }
-    })
+import "../css/index.styl";
+import Swiper from "swiper";
+import "../javascript/swiper.animate1.0.3.min.js";
+$(function() {
+  let mySwiper = new Swiper(".swiper-container", {
+    direction: "vertical",
+    pagination: {
+      el: ".swiper-pagination",
+      bulletElement: "span",
+      clickable: false,
+      bulletClass: "my-bullet",
+      bulletActiveClass: "my-bullet-active"
+    },
+    navigation: {
+      nextEl: ".next",
+      prevEl: ".last"
+    },
+    // $(".text-1").toggleClass('text-1-ani')
+    on: {
+      slideChangeTransitionEnd() {
+        if (elementIsVisibleInViewport($(".homeWrapper")[0]))
+          $(".homePage").addClass("home-ani");
+        else $(".homePage").removeClass("home-ani");
 
+        if (elementIsVisibleInViewport($(".first")[0]))
+          $(".first").addClass("first-ani");
+        else $(".first").removeClass("first-ani");
 
-    // let top = $("#homepage")[0].getBoundingClientRect().top //元素顶端到可见区域顶端的距离
-    // let se = document.documentElement.clientHeight //浏览器可见区域高度
-    // if(top <= se ) {
-    //     $(".text-1").addClass('text-1-ani')
-    // }else $(".text-1").removeClass('text-1-ani')
-    $(".selectLi").each(function () {
-        $(this).click(function () {
-            const inputBtn=$(".firstCircle")
-            console.log(inputBtn)
-            if(inputBtn.hasClass("selected")){
-                $("").removeClass("selected")
-            }else  $(inputBtn).addClass("selected")
-        })
-    })
+        if (elementIsVisibleInViewport($(".third")[0]))
+          $(".third").addClass("third-ani");
+        else $(".third").removeClass("third-ani");
 
+        if (elementIsVisibleInViewport($(".fourth")[0]))
+          $(".fourth").addClass("fourth-ani");
+        else $(".fourth").removeClass("fourth-ani");
 
-//    雷达图
-    const myChart = echarts.init(document.getElementById('myChart'));
-   const  option = {
-        tooltip: {},
-        legend: {
-            data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-        },
-        radar: {
-            // shape: 'circle',
-            name: {
-                textStyle: {
-                    color: '#fff',
-                    backgroundColor: '#999',
-                    borderRadius: 3,
-                    padding: [3, 5]
-                }
-            },
-            indicator: [
-                { name: '坚持', max: 6500},
-                { name: '行动', max: 16000},
-                { name: '格局', max: 30000},
-                { name: '突破', max: 38000},
-                { name: '生存', max: 52000},
-            ]
+        if (elementIsVisibleInViewport($(".fifth")[0]))
+          $(".fifth").addClass("fifth-ani");
+        else $(".fifth").removeClass("fifth-ani");
+
+        if (elementIsVisibleInViewport($(".second")[0]))
+          $(".second").addClass("second-ani");
+        else $(".second").removeClass("second-ani");
+      }
+    }
+  });
+  function elementIsVisibleInViewport(el, partiallyVisible = false) {
+    const { top, left, bottom, right } = el.getBoundingClientRect();
+
+    return partiallyVisible
+      ? ((top > 0 && top < innerHeight) ||
+          (bottom > 0 && bottom < innerHeight)) &&
+          ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+  }
+  $(".submitBtn").click(function() {
+    let position = [];
+    $("input[name='position']:checked").each(function() {
+        position.push($(this).val());
+    });
+    console.log(position)
+    $.ajax({
+      type: "post",
+      url: "/api/recruit",
+      data: {
+        name: $("#name").val(),
+        phone: $("#phone").val(),
+        position:position
+      },
+      success: function(data) {
+        if (data.code === "201") {
+          position = [];
+          console.log(data);
+          $(".mask").css("display", "block");
+          $(".successModal").css("display", "block");
+        } else if (data.code === "301") {
+          $(".mask").css("display", "block");
+          $(".failedModal").css("display", "block");
+        } else if (data.code === "500") {
+          $(".mask").css("display", "block");
+          $("#repeat").css("display", "none");
+          $(".failedModal").css("display", "block");
         }
-    };
-    myChart.setOption(option);
-})
+      }
+    });
+  });
+  $(".successConfirmBtn").click(function() {
+    $(".successModal").css("display", "none");
+    $(".mask").css("display", "none");
+  });
+  $(".failedConfirmBtn").click(function() {
+    $(".failedModal").css("display", "none");
+    $(".mask").css("display", "none");
+  });
+
+  //    雷达图
+  const myChart = echarts.init(document.getElementById("myChart"));
+  const option = {
+    radar: {
+      name: {
+        textStyle: {
+          color: "#3d468a",
+          fontSize: 12
+        }
+      },
+      indicator: [
+        { name: "坚持", max: 100 },
+        { name: "行动", max: 100 },
+        { name: "格局", max: 300 },
+        { name: "突破", max: 100 },
+        { name: "生存", max: 100 }
+      ],
+      nameGap: 2,
+      splitArea: {
+        areaStyle: {
+          color: ["#edeefe", "#edeefe", "#bcc0f8", "#8089f2", "#414de4"]
+        }
+      },
+      axisLine: {
+        show: false
+      },
+      splitLine: {
+        show: false
+      }
+    },
+    series: [
+      {
+        // name: '预算 vs 开销（Budget vs spending）',
+        itemStyle: {
+          normal: {
+            color: "rgba(255,244,92,.58)",
+            lineStyle: {
+              color: "#fbbd15",
+              width: 1
+            }
+          }
+        },
+        type: "radar",
+        symbol: "none",
+        data: [
+          {
+            value: [43, 10, 28, 35, 50]
+          }
+        ]
+      }
+    ]
+  };
+
+  myChart.setOption(option);
+});
