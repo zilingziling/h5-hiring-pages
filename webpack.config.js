@@ -128,7 +128,7 @@ module.exports = {
               // images文件夹里，[name]原来的名字,[ext]原来的拓展名
               // 我觉得使用[hash]最好了，不会出错也不会冲突
               // 被后来经理叫我改成原来的名字[name]，之前的资源名字全乱的，好多资源名字报错
-              name: "images/[hash].[ext]"
+              name: "images/[name].[ext]"
             }
           }
         ]

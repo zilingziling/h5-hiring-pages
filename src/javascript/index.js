@@ -1,6 +1,7 @@
 import "../css/index.styl";
 import Swiper from "swiper";
 import "../javascript/swiper.animate1.0.3.min.js";
+import "../images/ad.mp4"
 $(function() {
   let mySwiper = new Swiper(".swiper-container", {
     direction: "vertical",
@@ -18,9 +19,13 @@ $(function() {
     // $(".text-1").toggleClass('text-1-ani')
     on: {
       slideChangeTransitionEnd() {
-        if (elementIsVisibleInViewport($(".homeWrapper")[0]))
+        console.log(innerHeight,innerWidth)
+        if (elementIsVisibleInViewport($(".homeWrapper")[0])){
           $(".homePage").addClass("home-ani");
+          console.log($(".homePage")[0])
+        }
         else $(".homePage").removeClass("home-ani");
+
 
         if (elementIsVisibleInViewport($(".first")[0]))
           $(".first").addClass("first-ani");
@@ -51,7 +56,7 @@ $(function() {
       ? ((top > 0 && top < innerHeight) ||
           (bottom > 0 && bottom < innerHeight)) &&
           ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-      : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+      : top >= 0 && left >= 0 && bottom <= innerHeight+innerHeight/2 && right <= innerWidth+innerWidth/2;
   }
   $(".submitBtn").click(function() {
     let position = [];
@@ -128,11 +133,15 @@ $(function() {
         // name: '预算 vs 开销（Budget vs spending）',
         itemStyle: {
           normal: {
-            color: "rgba(255,244,92,.58)",
             lineStyle: {
               color: "#fbbd15",
               width: 1
             }
+          }
+        },
+        areaStyle:{
+          normal: {
+            color: "rgba(255,244,92,.58)",
           }
         },
         type: "radar",
