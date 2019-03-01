@@ -120,7 +120,7 @@ module.exports = {
       },
       {
         // 图片资源使用file-loader
-        test: /\.(png|jpg|gif|mp4)$/,
+        test: /\.(png|jpg|gif|mp4|ttf)$/,
         use: [
           {
             loader: "file-loader",

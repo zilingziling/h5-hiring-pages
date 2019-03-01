@@ -7,6 +7,7 @@ html
         <link href="https://cdn.bootcss.com/animate.css/3.7.0/animate.min.css" rel="stylesheet">
         <script src="https://cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script>
         <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+
     body
         .swiper-container
             .swiper-wrapper
@@ -19,7 +20,7 @@ html
                             .text-4
                             .symbol
                             .next
-                            .slide
+                            //.slide
                 .swiper-slide
                     .first
                         .sun
@@ -27,50 +28,50 @@ html
                         .liubei
                         .bird
                         .scroll
-                            ul
+                            ul.firstUl
                                 li
                                   span 1.你第一次前往南阳拜访时，恰逢诸葛亮出游，不知何时归来，你准备
                                 li.selectLi
-                                    input(type="radio" name="firstCircle" id="input-1")
+                                    input(type="radio" name="firstCircle" id="input-1" value=1)
                                     label(for="input-1").firstCircle
                                         span A. 在南阳等候诸葛归来
                                 li.selectLi
-                                    input(type="radio" name="firstCircle" id="input-2")
+                                    input(type="radio" name="firstCircle" id="input-2" value=2)
                                     label(for="input-2").firstCircle
                                         span B. 先行回去歇息，择日再来
                                 li.selectLi
-                                    input(type="radio" name="firstCircle" id="input-3")
+                                    input(type="radio" name="firstCircle" id="input-3" value=3)
                                     label(for="input-3").firstCircle
                                         span C. 千里马何其多，不差这一个
                         .next
-                        .slide
+                        //.slide
                 .swiper-slide
                     .second
                         .dialogue-1
                         .dialogue-2
                         .persons
                         .scroll
-                            ul
+                            ul.secondUl
                                 li
                                     span 2.你第二次拜访诸葛亮时，得知诸葛被朋友约走了，你会
                                 li.selectLi
-                                    input(type="radio" name="secondCircle" id='input-4')
+                                    input(type="radio" name="secondCircle" id='input-4' value=4)
                                     label(for="input-4").secondCircle
                                         span A. 扔下一封书信愤愤离去
                                 li.selectLi
-                                    input(type="radio" name="secondCircle" id='input-5')
+                                    input(type="radio" name="secondCircle" id='input-5' value=5)
                                     label(for="input-5").secondCircle
                                         span B. 微微一笑，没什么大不了
                                 li.selectLi
-                                    input(type="radio" name="secondCircle" id='input-6')
+                                    input(type="radio" name="secondCircle" id='input-6' value=6)
                                     label(for="input-6").secondCircle
                                         span C. 拆了诸葛亮的家
                         .btn
                             .last
                             .next
-                        .slide
+                        //.slide
                 .swiper-slide
-                    .third
+                    .third.thirdUl
                         .house
                         .zzz
                         .cat
@@ -80,23 +81,23 @@ html
                                 li
                                     span 3. 开春之际，你第三次拜访诸葛亮 ，恰逢诸葛亮在睡觉，你会
                                 li.selectLi
-                                    input(type="radio" name="thirdCircle" id='input-7')
+                                    input(type="radio" name="thirdCircle" id='input-7' value=7)
                                     label(for="input-7").thirdCircle
                                         span A. 在门外静静等候先生醒来
                                 li.selectLi
-                                    input(type="radio" name="thirdCircle" id='input-8')
+                                    input(type="radio" name="thirdCircle" id='input-8' value=8)
                                     label(for="input-8").thirdCircle
                                         span B. 破门将其吵醒
                                 li.selectLi
-                                    input(type="radio" name="thirdCircle" id='input-9')
+                                    input(type="radio" name="thirdCircle" id='input-9' value=9)
                                     label(for="input-9").thirdCircle
                                         span C. 找个酒馆，痛饮一场
                         .btn
                             .last
                             .next
-                        .slide
+                        //.slide
                 .swiper-slide
-                    .fourth
+                    .fourth.fourthUl
                         .moon
                         .window
                         .person
@@ -105,54 +106,56 @@ html
                                 li
                                     span 4.诸葛亮大梦初醒召见你，你会
                                 li.selectLi
-                                    input(type="radio" name="fourthCircle" id="input-10")
+                                    input(type="radio" name="fourthCircle" id="input-10" value=10)
                                     label(for="input-10").fourthCircle
                                         span A. 拜见卧龙先生
                                 li.selectLi
-                                    input(type="radio" name="fourthCircle" id="input-11")
+                                    input(type="radio" name="fourthCircle" id="input-11" value=11)
                                     label(for="input-11").fourthCircle
                                         span B. 真能睡，我腰都站酸了
                                 li.selectLi
-                                    input(type="radio" name="fourthCircle" id="input-12")
+                                    input(type="radio" name="fourthCircle" id="input-12" value=12)
                                     label(for="input-12").fourthCircle
                                         span C. 我的大刀早已饥渴难耐
                         .btn
                             .last
                             .next
-                        .slide
+                        //.slide
                 .swiper-slide
-                    .fifth
+                    .fifth.fifthUl
                         .flag
                         .scroll
                             ul
                                 li
                                     span 5. 隆中对后，诸葛亮跟着你出山助你，你会
                                 li.selectLi
-                                    input(type="radio" name="fifthCircle" id="input-13")
+                                    input(type="radio" name="fifthCircle" id="input-13" value=13)
                                     label(for="input-13").fifthCircle
                                         span A. 交付蜀国兵权
                                 li.selectLi
-                                    input(type="radio" name="fifthCircle" id="input-14")
+                                    input(type="radio" name="fifthCircle" id="input-14" value=14)
                                     label(for="input-14").fifthCircle
                                         span B. 过度依赖诸葛亮，纸醉金迷
                                 li.selectLi
-                                    input(type="radio" name="fifthCircle" id="input-15")
+                                    input(type="radio" name="fifthCircle" id="input-15" value=15)
                                     label(for="input-15").fifthCircle
                                         span C. 让关羽，张飞和他抬杠
-                        .next
-                        .slide
+                        .next(id='checkResult')
+                        //.slide
                 .swiper-slide
                     .resultPage
                         .video
-                            video(src="./images/ad.mp4" controls)
+                            video(src="./images/ad.mp4" autoplay controls)
+                        .video-person
                         .result
+                            .notFinished 完成所有题目后点击查看结果试试！
                         .tag
                         .echart(id="myChart")
                         .resultText
-                            span 综合评测：
-                            p 滚滚长江东逝水，浪花淘尽英雄。是非成败转头空。青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢。古今多少事，都付笑谈中。
+                            span(id="articleTitle") 深谋远虑的再世孔明
+                            p(id="article") 年初你一直在为自己的新职业做计划，也可以说你对这次跳槽做足了准备，你也相信自己的能力是可以做到的，近期会跳槽的可能性很大。点击下方领取岗位试试
                         .next
-                        .slide
+                        //.slide
                 .swiper-slide
                     .form
                         p.firstP 1.您的姓名
@@ -160,7 +163,7 @@ html
                         input(id="name")
                         p.secondP 2.您的电话
                             span *
-                        input(id="phone")
+                        input(id="phone" type='tel' pattern="[0-9]*")
                         p.thirdP 3.您应聘的岗位【多选题】
                             span *
                         .gridWrapper
@@ -189,7 +192,7 @@ html
                             p 我们的HR将在48小时内联系您
                             .successConfirmBtn 确定
                         .failedModal
-                            p 信息提交失败！
+                            p(id="resultTitle") 信息提交失败,请检查输入！
                             p(id='repeat') 号码重复
                             .failedConfirmBtn 确定
 

@@ -1,4 +1,7 @@
 @import "global.styl"
+@font-face
+  font-family: 'happyZcool';
+  src url("../happyZcool.ttf")
 .swiper-slide
   height: 100vh
   overflow: hidden
@@ -71,13 +74,17 @@ ul()
       visibility hidden
       margin: 0 rem(14) 0 0
 
-
-
+html
+  height 100vh
+  overflow: hidden
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+.swiper-wrapper
+  height 100vh
 liubeiSlideIn()
      width rem(92)
-     height rem(167)
+     height rem(174)
      position absolute
-     top rem(218)
+     top rem(210)
      left:rem(235)
      display none
 //  首页
@@ -139,6 +146,7 @@ liubeiSlideIn()
 body
   overflow hidden
   width: 100vw
+  font-family: 'happyZcool';
   input
     outline none
 .swiper-container
@@ -305,10 +313,10 @@ body
           content:''
           width:rem(18)
           height rem(18)
-          background url("../images/unselect.png") center/cover no-repeat
+          background url("../images/unselect.png") center/contain no-repeat
           position absolute
       input:checked + .firstCircle:before
-        background url("../images/selected.png") center/cover no-repeat
+        background url("../images/selected.png") center/contain no-repeat
 
   .next
     width rem(131)
@@ -379,10 +387,10 @@ body
            content:''
            width:rem(18)
            height rem(18)
-           background url("../images/unselect.png") center/cover no-repeat
+           background url("../images/unselect.png") center/contain no-repeat
            position absolute
       input:checked + .secondCircle:before
-        background url("../images/selected.png") center/cover no-repeat
+        background url("../images/selected.png") center/contain no-repeat
 
 .slide
     slide()
@@ -451,10 +459,10 @@ body
           content:''
           width:rem(18)
           height rem(18)
-          background url("../images/unselect.png") center/cover no-repeat
+          background url("../images/unselect.png") center/contain no-repeat
           position absolute
       input:checked + .thirdCircle:before
-        background url("../images/selected.png") center/cover no-repeat
+        background url("../images/selected.png") center/contain no-repeat
   .btn
     btn()
   .slide
@@ -510,10 +518,10 @@ body
           content:''
           width:rem(18)
           height rem(18)
-          background url("../images/unselect.png") center/cover no-repeat
+          background url("../images/unselect.png") center/contain no-repeat
           position absolute
       input:checked + .fourthCircle:before
-        background url("../images/selected.png") center/cover no-repeat
+        background url("../images/selected.png") center/contain no-repeat
   .btn
     btn()
   .slide
@@ -532,7 +540,7 @@ body
     height rem(190)
     background url("../images/flag.png") center/cover no-repeat
     position absolute
-    top  rem(137)
+    top  rem(166)
     left:rem(198)
     animation-iteration-count: 1;
     animation-delay: 0s;
@@ -579,7 +587,7 @@ body
   .video
     width rem(357)
     height rem(344)
-    background url("../images/viedo.png") center/cover no-repeat
+    background url("../images/video.png") center/cover no-repeat
     position absolute
     top  rem(25)
     left:rem(5)
@@ -589,7 +597,13 @@ body
       position absolute
       top  rem(50)
       left:rem(30)
-
+  .video-person
+    width rem(50)
+    height rem(84)
+    background url("../images/video-person.png") center/cover no-repeat
+    position absolute
+    top  rem(25)
+    left:rem(30)
   .result
     width rem(360)
     height rem(270)
@@ -597,6 +611,11 @@ body
     position absolute
     top  rem(295)
     left:rem(15)
+    .notFinished
+        text-align center
+        font-size rem(18)
+        color #ffa107
+        margin-top rem(130)
   .tag
     width rem(210)
     height rem(79)
@@ -607,13 +626,14 @@ body
   .resultText
     width rem(140)
     position relative
-    top  rem(390)
+    top  rem(386)
     left:rem(196)
     font-size rem(12)
+    display none
     span
       color #0f1a6c
-      font-size rem(14)
-      letter-spacing rem(4)
+      font-size rem(12)
+      letter-spacing rem(2)
       font-weight 800
     p
       font-size rem(12)
@@ -626,6 +646,7 @@ body
     position absolute
     top  rem(395)
     left:rem(20)
+    display none
   .next
     width:rem(251)
     height:rem(48)
@@ -691,19 +712,19 @@ body
       display flex
       align-items: center
       &:before
-        width:rem(15)
-        height:rem(15)
-        background url("../images/notCheck.png") center/cover no-repeat
+        width:rem(16)
+        height:rem(16)
+        background url("../images/notCheck.png") center/contain   no-repeat
         position absolute
         content:''
-        left rem(-27)
+        left rem(-25)
     input
-      width:rem(15)
-      height:rem(15)
+      width:rem(16)
+      height:rem(16)
       margin-right  rem(12)
       visibility hidden
       &:checked + label:before
-        background url("../images/check.png") center/cover no-repeat
+        background url("../images/check.png") center/contain no-repeat
   .submitBtn
     width:rem(332)
     height:rem(42)
