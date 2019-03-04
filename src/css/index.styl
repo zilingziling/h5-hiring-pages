@@ -2,6 +2,9 @@
 @font-face
   font-family: 'happyZcool';
   src url("../happyZcool.ttf")
+@font-face
+  font-family: 'siyuan';
+  src url("../siyuan.OTF")
 .swiper-slide
   height: 100vh
   overflow: hidden
@@ -51,14 +54,16 @@ btn()
     width rem(131)
     height rem(48)
     background url("../images/nextBtn.png") center/cover no-repeat
+    left:rem(154)
+
 
 ul()
-  font-size rem(12)
+  font-size rem(14)
   font-family 'HappyZcool'
   letter-spacing rem(4)
   color: #6b2911
   font-weight 500
-  margin rem(36) auto 0
+  margin rem(34) rem(21) 0 rem(12)
   width rem(280)
   height rem(156)
   li
@@ -123,7 +128,8 @@ liubeiSlideIn()
   .dialogue-2
     animation-name: fadeInLeft;
     display block !important
-
+  .snow
+    animation-name: snowAni ;
 .third-ani
   .house
     animation-name: pulse;
@@ -149,6 +155,17 @@ body
   font-family: 'happyZcool';
   input
     outline none
+  .music
+    background url("../images/musicBtn.png") center/cover no-repeat
+    height:rem(40)
+    width: rem(40)
+    position: absolute
+    top: rem(10)
+    right: rem(4)
+    z-index: 99
+    animation:rotating 3s linear infinite
+  .stop
+    animation-play-state:paused
 .swiper-container
   width 100vw
   height: 100vh
@@ -336,6 +353,23 @@ body
   background url("../images/background-2.png") center/cover no-repeat
   position relative
   overflow hidden
+  .snow
+    width 100vw
+    height 100vh
+    background url("../images/snow.png"),url("../images/snow.png"),url("../images/snow.png"),url("../images/snow.png")
+    position absolute
+    top  rem(2)
+    left:0
+    right 0
+    bottom 0
+    background-position -50% 0
+    background-size 70%
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
   .dialogue-1
     width rem(90)
     height rem(84)
@@ -410,9 +444,9 @@ body
     position absolute
     top  rem(154)
     left:0
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-delay: 0s;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-timing-function: ease;
     animation-fill-mode: both;
     animation-play-state: running;
@@ -423,7 +457,7 @@ body
     position absolute
     top  rem(175)
     left:rem(158)
-    animation-iteration-count: 1;
+    animation-iteration-count: infinite;
     animation-delay: 0s;
     animation-duration: 1s;
     animation-timing-function: ease;
@@ -540,7 +574,7 @@ body
     height rem(190)
     background url("../images/flag.png") center/cover no-repeat
     position absolute
-    top  rem(166)
+    top  rem(164)
     left:rem(198)
     animation-iteration-count: 1;
     animation-delay: 0s;
@@ -584,38 +618,54 @@ body
   position relative
   background #111980
   overflow hidden
+  font-family "siyuan"
+  .playBtn
+    width rem(60)
+    height rem(60)
+    position absolute
+    top  rem(136)
+    left rem(152)
+    background url("../images/play.png") center/cover no-repeat
+    z-index 4
   .video
-    width rem(357)
+    width rem(364)
     height rem(344)
     background url("../images/video.png") center/cover no-repeat
     position absolute
     top  rem(25)
-    left:rem(5)
+    left rem(-6)
+    overflow hidden
+    opacity .9
     video
       width rem(317)
       height rem(190)
       position absolute
       top  rem(50)
       left:rem(30)
-  .video-person
+      display none
+
+
+
+.video-person
     width rem(50)
     height rem(84)
     background url("../images/video-person.png") center/cover no-repeat
     position absolute
-    top  rem(25)
+    top  rem(16)
     left:rem(30)
+    z-index 20
   .result
     width rem(360)
     height rem(270)
     background url("../images/border.png") center/cover no-repeat
     position absolute
     top  rem(295)
-    left:rem(15)
+    left:rem(14)
     .notFinished
         text-align center
         font-size rem(18)
-        color #ffa107
-        margin-top rem(130)
+        color #093b94
+        margin-top rem(146)
   .tag
     width rem(210)
     height rem(79)
@@ -624,9 +674,9 @@ body
     top  rem(310)
     left: rem(82)
   .resultText
-    width rem(140)
+    width rem(156)
     position relative
-    top  rem(386)
+    top  rem(370)
     left:rem(196)
     font-size rem(12)
     display none
@@ -648,10 +698,12 @@ body
     left:rem(20)
     display none
   .next
-    width:rem(251)
+    width:rem(254)
     height:rem(48)
     background url("../images/positionBtn.png") center/cover no-repeat
     position absolute
+
+  #positionBtn
     top  rem(585)
     left:rem(62)
   .slide
@@ -665,6 +717,8 @@ body
   font-size 12px
   position: relative
   overflow hidden
+  font-family "siyuan"
+
   .firstP
     margin: rem(34) 0 rem(16)
   .secondP
@@ -672,7 +726,7 @@ body
   .thirdP
     margin: rem(23) 0 rem(16)
   p
-    width rem(373)
+    width rem(375)
     height rem(33)
     background: #0c3094
     font-size:rem(18)
@@ -726,7 +780,7 @@ body
       &:checked + label:before
         background url("../images/check.png") center/contain no-repeat
   .submitBtn
-    width:rem(332)
+    width:rem(334)
     height:rem(42)
     background url("../images/submitBtn.png") center/cover no-repeat
     position absolute
@@ -805,7 +859,16 @@ body
       border-radius rem(20)
 
 
-
+//旋转
+@keyframes rotating{
+  from{transform:rotate(0)}
+  to{transform:rotate(360deg)}
+}
+// 下雪
+@keyframes snowAni {
+    0% { background-position: 0 0, 0px 0px, 0px 0px }
+    100% { background-position: 500px 1000px, 400px 400px, 300px 300px }
+}
 // flag
 @keyframes float {
   0% {
@@ -828,8 +891,8 @@ body
 // 月亮
 @keyframes fadeInUp {
   0% {
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
     opacity: 0
   }
   to {
@@ -904,8 +967,8 @@ body
 //    刘备 气泡
 @keyframes bounceInRight {
   0% {
-    -webkit-transform: translate3d(2000px, 0, 0);
-    transform: translate3d(2000px, 0, 0);
+    -webkit-transform: translate3d(300px, 0, 0);
+    transform: translate3d(300px, 0, 0);
     opacity: 0
   }
   to {

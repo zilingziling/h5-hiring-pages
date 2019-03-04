@@ -2,8 +2,87 @@ import "../css/index.styl";
 import Swiper from "swiper";
 import "../javascript/swiper.animate1.0.3.min.js";
 import "../images/ad.mp4"
+import "../music.mp3"
 import "../css/media.styl"
 $(function() {
+  // $.get("获取微信signature的接口",
+  //     {"url":location.href.split('#').toString()}).done(function (data) {
+  //   // 注意这里的url，一定要这样写，也就是动态获取，不然也不会成功的。
+  //   console.log(data);
+  //   if (data.header.code == 200) {
+  //     var wx_info = data.body.result.wx_info;
+  //     if (wx_info.signature != null) {
+  //       // 配置
+  //       wx.config({
+  //         debug: false,   // 测试阶段，可以写为true，主要是为了测试是否配置成功
+  //         appId: wx_info.appId,
+  //         timestamp: wx_info.timestamp,
+  //         nonceStr: wx_info.nonceStr,
+  //         signature: wx_info.signature,
+  //         jsApiList: ['checkJsApi', 'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ',
+  //           'onMenuShareQZone']
+  //       });
+  //
+  //       var title = "我要跳槽";
+  //       var desc = "我要跳槽";
+  //       // 分享的图片，最好是正方形，不是也没关系，但是一定是http模式，即绝对路径，而不是服务器路劲
+  //       var imgUrl = "../images/flag.png";
+  //       // 这里的地址可以写死，也可以动态获取，但是一定不能带有微信分享后的参数，不然分享也是失败的
+  //       var link=""
+  //
+  //       // 分享给朋友、QQ、微博
+  //       var shareData = {
+  //         "imgUrl": imgUrl,
+  //         "title": title,
+  //         "desc": desc,
+  //         'link': link
+  //       };
+  //       // 分享到朋友圈
+  //       var shareToTimeline = {
+  //         "imgUrl": imgUrl,
+  //         "title": title,
+  //         'link': link,
+  //         "desc": desc
+  //       }
+  //       wx.ready(function() {
+  //         wx.onMenuShareTimeline(shareToTimeline);
+  //         wx.onMenuShareAppMessage(shareData);
+  //         wx.onMenuShareQQ(shareData);
+  //         wx.onMenuShareQZone(shareData);
+  //
+  //         wx.error(function(res) {
+  //           alert(res.errMsg);
+  //         });
+  //       });
+  //     }
+  //   }
+  // }).fail(function (msg) {
+  //   console.log("error:" + msg);
+  // });
+
+
+
+
+
+
+
+
+
+
+
+
+  document.addEventListener("WeixinJSBridgeReady", function () {
+    let isPlay = true;
+    const audio = document.querySelector("audio");
+    audio.play();
+    const musicBtn = document.querySelector("#musicBtn");
+    musicBtn.addEventListener("click", function () {
+      isPlay ? audio.pause() : audio.play();
+      isPlay = !isPlay;
+      musicBtn.classList.toggle("stop");
+    })
+  }, false);
+
   let mySwiper = new Swiper(".swiper-container", {
     direction: "vertical",
     pagination: {
@@ -52,32 +131,32 @@ $(function() {
     const { top, left, bottom, right } = el.getBoundingClientRect();
 
     return partiallyVisible
-      ? ((top > 0 && top < innerHeight) ||
-          (bottom > 0 && bottom < innerHeight)) &&
-          ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-      : top >= 0 && left >= 0 && bottom <= innerHeight+innerHeight/2 && right <= innerWidth+innerWidth/2;
+        ? ((top > 0 && top < innerHeight) ||
+        (bottom > 0 && bottom < innerHeight)) &&
+        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+        : top >= 0 && left >= 0 && bottom <= innerHeight+innerHeight/2 && right <= innerWidth+innerWidth/2;
   }
 
-  let isSuccess=false
+  let isSuccess=0
   $(".submitBtn").click(function() {
-    if(isSuccess){
+    let position = [];
+    $("input[name='position']:checked").each(function() {
+      position.push($(this).val());
+    });
+    const name=$("#name").val()
+    const phone= $("#phone").val()
+    if(!name||!phone||position.length<=0){
       $(".mask").css("display", "block");
-      $("#resultTitle").css("display", "none");
-      $("#repeat").text("你已经提交过了，不用重复提交啦！");
-      $("#repeat").css("display", "block");
+      $("#repeat").css("display", "none");
       $(".failedModal").css("display", "block");
       return
     }
-    let position = [];
-    $("input[name='position']:checked").each(function() {
-        position.push($(this).val());
-    });
     $.ajax({
       type: "post",
-      url: "/api/recruit",
+      url: "index.php/api/recruit",
       data: {
-        name: $("#name").val(),
-        phone: $("#phone").val(),
+        name:name,
+        phone:phone,
         position:position
       },
       success: function(data) {
@@ -85,9 +164,9 @@ $(function() {
           position = [];
           $(".mask").css("display", "block");
           $(".successModal").css("display", "block");
-          isSuccess=true
         } else if (data.code === 301) {
           $(".mask").css("display", "block");
+          $("#resultTitle").text("号码重复")
           $(".failedModal").css("display", "block");
         } else if (data.code === 500) {
           $(".mask").css("display", "block");
@@ -106,7 +185,6 @@ $(function() {
     $(".mask").css("display", "none");
   });
   $("#checkResult").click(function () {
-    // document.querySelector("video").play();
     const first=$(".firstUl input:checked").val()
     const second=$(".secondUl input:checked").val()
     const third=$(".thirdUl input:checked").val()
@@ -145,7 +223,13 @@ $(function() {
 
   })
 
-
+  // 播放按钮
+  $(".playBtn").click(function () {
+    $(".playBtn").css("display","none")
+    $("#realVideo").css("display","block")
+    $("#realMusic")[0].pause();
+    $("#realVideo")[0].play()
+  })
   //    雷达图
   const dataRandoom_1= parseInt(Math.random()*25+ 46);
   const dataRandoom_2= parseInt(Math.random()*25+ 58);
@@ -211,3 +295,4 @@ $(function() {
 
   myChart.setOption(option);
 });
+

@@ -20,7 +20,7 @@ module.exports = {
   // 打包出口
   output: {
     // javascript文件夹，[name]是什么键名,[hash]加上hash值
-    filename: "javascript/[name].[hash].js",
+    filename: "javascript/[name].js",
     // dist文件夹（默认）
     path: path.resolve(__dirname, "dist")
   },
@@ -120,7 +120,7 @@ module.exports = {
       },
       {
         // 图片资源使用file-loader
-        test: /\.(png|jpg|gif|mp4|ttf)$/,
+        test: /\.(png|jpg|gif|mp4|ttf|OTF)$/,
         use: [
           {
             loader: "file-loader",
@@ -130,7 +130,22 @@ module.exports = {
               // 被后来经理叫我改成原来的名字[name]，之前的资源名字全乱的，好多资源名字报错
               name: "images/[name].[ext]"
             }
-          }
+          },
+        ]
+      }
+      ,      {
+        // 图片资源使用file-loader
+        test: /\.(mp3)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              // images文件夹里，[name]原来的名字,[ext]原来的拓展名
+              // 我觉得使用[hash]最好了，不会出错也不会冲突
+              // 被后来经理叫我改成原来的名字[name]，之前的资源名字全乱的，好多资源名字报错
+              name: "./[name].[ext]"
+            }
+          },
         ]
       }
     ]
